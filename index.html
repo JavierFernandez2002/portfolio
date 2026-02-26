@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Javier Fernández | Portfolio</title>
   <meta
+    id="meta-description"
     name="description"
     content="Portfolio de Javier Fernández, estudiante de Ingeniería en Sistemas y desarrollador en formación."
   />
@@ -363,19 +364,19 @@
           </p>
 
           <div class="actions">
-            <a href="https://github.com/JavierFernandez2002" target="_blank" class="btn btn-primary" id="hero-github">GitHub</a>
-            <a href="https://www.linkedin.com/in/javier-fernandez-" target="_blank" class="btn btn-outline" id="hero-linkedin">LinkedIn</a>
-            <a href="mailto:tuemail@example.com" class="btn btn-outline" id="hero-contact">Contactarme</a>
+            <a href="https://github.com/JavierFernandez2002" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="hero-github">GitHub</a>
+            <a href="https://www.linkedin.com/in/javier-fernandez-" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="hero-linkedin">LinkedIn</a>
+            <a href="mailto:fernandezjavier2002@gmail.com" class="btn btn-outline" id="hero-contact">Contactarme</a>
           </div>
         </div>
 
         <aside class="hero-card">
           <h3 id="focus-title">Enfoque actual</h3>
           <ul>
-            <li id="focus-1">• Desarrollo backend con Node.js y Java</li>
-            <li id="focus-2">• APIs REST y bases de datos SQL</li>
-            <li id="focus-3">• Automatización con Python</li>
-            <li id="focus-4">• Construcción de proyectos para portfolio</li>
+            <li id="focus-1">- Desarrollo backend con Node.js y Java</li>
+            <li id="focus-2">- APIs REST y bases de datos SQL</li>
+            <li id="focus-3">- Automatización con Python</li>
+            <li id="focus-4">- Construcción de proyectos para portfolio</li>
           </ul>
         </aside>
       </div>
@@ -394,7 +395,7 @@
             <h3 id="profile-title">Mi perfil</h3>
             <p id="profile-text">
               Soy estudiante de Ingeniería en Sistemas y disfruto aprender construyendo.
-              Me interesa entender cómo funcionan las aplicaciones por dentro, desde la lógica
+              Me interesa entender como funcionan las aplicaciónes por dentro, desde la lógica
               de negocio hasta la persistencia de datos y la experiencia del usuario.
             </p>
           </div>
@@ -421,28 +422,47 @@
         <div class="projects-grid">
           <article class="project-card">
             <div>
-              <h3 id="project3-title">Aplicación Web de Gestión y Visualización de Hechos Geolocalizados</h3>
-              <p id="project3-text">
-                Este proyecto fue desarrollado como parte de un trabajo práctico para la materia Diseño de Sistemas de Información.
-                Se trata de una aplicación web full-stack orientada a microservicios, diseñada para la recolección, 
+              <h3 id="project-geo-title">Aplicación Web de Gestión y Visualización de Hechos Geolocalizados</h3>
+              <p id="project-geo-text">
+                Este proyecto fue desarrollado como parte de un trabajo práctico para la materia Diseno de Sistemas de Información.
+                Se trata de una aplicación web full-stack orientada a microservicios, diseñada para la recolección,
                 publicación y visualización interactiva de hechos geolocalizados en tiempo real.
               </p>
               <div class="tags">
                 <span class="tag">Java</span>
                 <span class="tag">Microservices</span>
-                <span class="tag">Fullstack</span>
+                <span class="tag">Full Stack</span>
                 <span class="tag">Cloud & DevOps</span>
               </div>
             </div>
             <div class="project-links">
-              <a href="https://github.com/JavierFernandez2002/Aplicacion-Web-de-Gestion-y-Visualizacion-de-Hechos-Geolocalizados" target="_blank" id="project-link-3">Código</a>
+              <a href="https://github.com/JavierFernandez2002/Aplicacion-Web-de-Gestion-y-Visualizacion-de-Hechos-Geolocalizados" target="_blank" rel="noopener noreferrer" id="project-geo-link">Código</a>
             </div>
           </article>
+
           <article class="project-card">
             <div>
-              <h3 id="project1-title">Lista de tareas CLI</h3>
-              <p id="project1-text">
-                Aplicación de línea de comandos para crear, actualizar y eliminar tareas,
+              <h3 id="project-os-title">Simulador de Sistema Operativo - Master Of Files</h3>
+              <p id="project-os-text">
+                Simulación de un sistema distribuido desarrollada como trabajo práctico para la materia Sistemas Operativos.
+                El proyecto implementa conceptos fundamentales, incluyendo planificación y coordinación de procesos,
+                manejo de memoria, comunicacion entre módulos y operaciones relacionadas con el sistema de archivos.
+              </p>
+              <div class="tags">
+                <span class="tag">C</span>
+                <span class="tag">GNU Make</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/JavierFernandez2002/Simulador-de-Sistema-Operativo-Master-Of-Files" target="_blank" rel="noopener noreferrer" id="project-os-link">Código</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <h3 id="project-cli-title">Lista de tareas CLI</h3>
+              <p id="project-cli-text">
+                Aplicacion de línea de comandos para crear, actualizar y eliminar tareas,
                 persistiendo la información en un archivo JSON.
               </p>
               <div class="tags">
@@ -452,16 +472,16 @@
               </div>
             </div>
             <div class="project-links">
-              <a href="https://github.com/JavierFernandez2002/" target="_blank" id="project-link-1">Código</a>
+              <a href="https://github.com/JavierFernandez2002/" target="_blank" rel="noopener noreferrer" id="project-cli-link">Código</a>
             </div>
           </article>
 
           <article class="project-card">
             <div>
-              <h3 id="project2-title">Backend con APIs REST</h3>
-              <p id="project2-text">
+              <h3 id="project-api-title">Backend con APIs REST</h3>
+              <p id="project-api-text">
                 Proyecto orientado a practicar endpoints, lógica de negocio,
-                validaciones y persistencia de datos en una arquitectura clara.
+                validaciones y persistencia de datos con una arquitectura clara.
               </p>
               <div class="tags">
                 <span class="tag">Java</span>
@@ -470,7 +490,7 @@
               </div>
             </div>
             <div class="project-links">
-              <a href="https://github.com/JavierFernandez2002/" target="_blank" id="project-link-2">Código</a>
+              <a href="https://github.com/JavierFernandez2002/" target="_blank" rel="noopener noreferrer" id="project-api-link">Código</a>
             </div>
           </article>
         </div>
@@ -512,8 +532,8 @@
 
           <div class="contact-links">
             <a href="mailto:fernandezjavier2002@gmail.com" class="btn btn-primary" id="contact-email">Email</a>
-            <a href="https://www.linkedin.com/in/javier-fernandez-" target="_blank" class="btn btn-outline" id="contact-linkedin">LinkedIn</a>
-            <a href="https://github.com/JavierFernandez2002" target="_blank" class="btn btn-outline" id="contact-github">GitHub</a>
+            <a href="https://www.linkedin.com/in/javier-fernandez-" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="contact-linkedin">LinkedIn</a>
+            <a href="https://github.com/JavierFernandez2002" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="contact-github">GitHub</a>
           </div>
         </div>
       </div>
@@ -529,6 +549,9 @@
   <script>
     const translations = {
       es: {
+        "page-title": "Javier Fernández | Portfolio",
+        "meta-description": "Portfolio de Javier Fernández, estudiante de Ingeniería en Sistemas y desarrollador en formación.",
+
         "nav-about": "Sobre mí",
         "nav-projects": "Proyectos",
         "nav-skills": "Habilidades",
@@ -542,29 +565,36 @@
         "hero-contact": "Contactarme",
 
         "focus-title": "Enfoque actual",
-        "focus-1": "• Desarrollo backend con Node.js y Java",
-        "focus-2": "• APIs REST y bases de datos SQL",
-        "focus-3": "• Automatización con Python",
-        "focus-4": "• Construcción de proyectos para portfolio",
+        "focus-1": "- Desarrollo backend con Node.js y Java",
+        "focus-2": "- APIs REST y bases de datos SQL",
+        "focus-3": "- Automatización con Python",
+        "focus-4": "- Construcción de proyectos para portfolio",
 
         "about-title": "Sobre mí",
         "about-subtitle": "Estoy construyendo experiencia a través de proyectos personales y académicos, con foco en software, automatización y desarrollo web.",
         "profile-title": "Mi perfil",
-        "profile-text": "Soy estudiante de Ingeniería en Sistemas y disfruto aprender construyendo. Me interesa entender cómo funcionan las aplicaciones por dentro, desde la lógica de negocio hasta la persistencia de datos y la experiencia del usuario.",
+        "profile-text": "Soy estudiante de Ingeniería en Sistemas y disfruto aprender construyendo. Me interesa entender como funcionan las aplicaciónes por dentro, desde la lógica de negocio hasta la persistencia de datos y la experiencia del usuario.",
         "goals-title": "Qué busco",
         "goals-text": "Busco oportunidades para seguir creciendo en desarrollo de software, sumar experiencia real y aportar valor en proyectos donde pueda seguir mejorando mis habilidades técnicas y profesionales.",
 
         "projects-title": "Proyectos",
         "projects-subtitle": "Algunos proyectos que muestran lo que vengo aprendiendo y construyendo.",
-        "project1-title": "Lista de tareas CLI",
-        "project1-text": "Aplicación de línea de comandos para crear, actualizar y eliminar tareas, persistiendo la información en un archivo JSON.",
-        "project2-title": "Backend con APIs REST",
-        "project2-text": "Proyecto orientado a practicar endpoints, lógica de negocio, validaciones y persistencia de datos en una arquitectura clara.",
-        "project3-title": "Automatización con Python",
-        "project3-text": "Scripts para automatizar tareas repetitivas, procesamiento de archivos y organización de flujos de trabajo.",
-        "project-link-1": "Código",
-        "project-link-2": "Código",
-        "project-link-3": "Código",
+
+        "project-geo-title": "Aplicación Web de Gestión y Visualización de Hechos Geolocalizados",
+        "project-geo-text": "Este proyecto fue desarrollado como parte de un trabajo práctico para la materia Diseno de Sistemas de Información. Se trata de una aplicación web full-stack orientada a microservicios, diseñada para la recolección, publicación y visualización interactiva de hechos geolocalizados en tiempo real.",
+        "project-geo-link": "Código",
+
+        "project-os-title": "Simulador de Sistema Operativo - Master Of Files",
+        "project-os-text": "Simulación de un sistema distribuido desarrollada como trabajo práctico para la materia Sistemas Operativos. El proyecto implementa conceptos fundamentales, incluyendo planificación y coordinación de procesos, manejo de memoria, comunicacion entre módulos y operaciones relacionadas con el sistema de archivos.",
+        "project-os-link": "Código",
+
+        "project-cli-title": "Lista de tareas CLI",
+        "project-cli-text": "Aplicacion de línea de comandos para crear, actualizar y eliminar tareas, persistiendo la información en un archivo JSON.",
+        "project-cli-link": "Código",
+
+        "project-api-title": "Backend con APIs REST",
+        "project-api-text": "Proyecto orientado a practicar endpoints, lógica de negocio, validaciones y persistencia de datos con una arquitectura clara.",
+        "project-api-link": "Código",
 
         "skills-title": "Habilidades",
         "skills-subtitle": "Tecnologías con las que trabajo o estoy aprendiendo actualmente.",
@@ -579,6 +609,9 @@
       },
 
       en: {
+        "page-title": "Javier Fernández | Portfolio",
+        "meta-description": "Portfolio of Javier Fernández, Information Systems Engineering student and aspiring software developer.",
+
         "nav-about": "About",
         "nav-projects": "Projects",
         "nav-skills": "Skills",
@@ -586,41 +619,48 @@
 
         "hero-greeting": "Hi, I'm",
         "hero-title": 'Javier <span>Fernández</span>',
-        "hero-description": "Information Systems Engineering student and aspiring developer. I enjoy building useful solutions, learning best practices, and growing in backend, frontend, and automation.",
+        "hero-description": "Information Systems Engineering student and aspiring software developer. I am interested in building useful solutions, learning best practices, and continuing to grow in backend development, frontend development, and automation.",
         "hero-github": "GitHub",
         "hero-linkedin": "LinkedIn",
         "hero-contact": "Contact me",
 
         "focus-title": "Current focus",
-        "focus-1": "• Backend development with Node.js and Java",
-        "focus-2": "• REST APIs and SQL databases",
-        "focus-3": "• Automation with Python",
-        "focus-4": "• Building portfolio projects",
+        "focus-1": "- Backend development with Node.js and Java",
+        "focus-2": "- REST APIs and SQL databases",
+        "focus-3": "- Automation with Python",
+        "focus-4": "- Building projects for my portfolio",
 
         "about-title": "About me",
         "about-subtitle": "I am building experience through personal and academic projects, with a focus on software, automation, and web development.",
         "profile-title": "My profile",
-        "profile-text": "I am an Information Systems student who enjoys learning by building. I like understanding how applications work internally, from business logic to data persistence and user experience.",
-        "goals-title": "What I'm looking for",
-        "goals-text": "I am looking for opportunities to keep growing in software development, gain real-world experience, and contribute value in projects where I can continue improving my technical and professional skills.",
+        "profile-text": "I am an Information Systems Engineering student who enjoys learning by building. I am interested in understanding how applications work internally, from business logic to data persistence and user experience.",
+        "goals-title": "What I am looking for",
+        "goals-text": "I am looking for opportunities to continue growing in software development, gain real-world experience, and add value in projects where I can keep improving my technical and professional skills.",
 
         "projects-title": "Projects",
         "projects-subtitle": "Some projects that reflect what I have been learning and building.",
-        "project1-title": "Task Tracker CLI",
-        "project1-text": "Command-line application to create, update, and delete tasks, storing the information in a JSON file.",
-        "project2-title": "REST API Backend",
-        "project2-text": "Project focused on practicing endpoints, business logic, validations, and data persistence with a clear architecture.",
-        "project3-title": "Python Automation",
-        "project3-text": "Scripts to automate repetitive tasks, file processing, and workflow organization.",
-        "project-link-1": "Code",
-        "project-link-2": "Code",
-        "project-link-3": "Code",
+
+        "project-geo-title": "Web Application for Managing and Visualizing Geolocated Events",
+        "project-geo-text": "This project was developed as part of a course assignment for Information Systems Design. It is a full-stack web application based on a microservices architecture, designed for the collection, publication, and interactive real-time visualization of geolocated events.",
+        "project-geo-link": "Code",
+
+        "project-os-title": "Operating System Simulator - Master Of Files",
+        "project-os-text": "Simulation of a distributed system developed as a course assignment for Operating Systems. The project implements core concepts such as process planning and coordination, memory management, communication between modules, and file system-related operations.",
+        "project-os-link": "Code",
+
+        "project-cli-title": "CLI Task Tracker",
+        "project-cli-text": "Command-line application for creating, updating, and deleting tasks, with data stored in a JSON file.",
+        "project-cli-link": "Code",
+
+        "project-api-title": "REST API Backend",
+        "project-api-text": "Project focused on practicing endpoints, business logic, validation, and data persistence with a clear architecture.",
+        "project-api-link": "Code",
 
         "skills-title": "Skills",
         "skills-subtitle": "Technologies I work with or am currently learning.",
 
         "contact-title": "Contact",
-        "contact-text": "If you'd like to get in touch for an opportunity, collaboration, or just to talk about projects and technology, you can find me through these links.",
+        "contact-text": "If you would like to get in touch regarding an opportunity, a collaboration, or simply to talk about projects and technology, you can reach me through these links.",
         "contact-email": "Email",
         "contact-linkedin": "LinkedIn",
         "contact-github": "GitHub",
@@ -631,6 +671,19 @@
 
     function setLanguage(lang) {
       Object.keys(translations[lang]).forEach((id) => {
+        if (id === "page-title") {
+          document.title = translations[lang][id];
+          return;
+        }
+
+        if (id === "meta-description") {
+          const metaDescription = document.getElementById("meta-description");
+          if (metaDescription) {
+            metaDescription.setAttribute("content", translations[lang][id]);
+          }
+          return;
+        }
+
         const element = document.getElementById(id);
         if (element) {
           element.innerHTML = translations[lang][id];
