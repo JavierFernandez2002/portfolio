@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Javier Fernández | Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio de Javier Fernández, estudiante de Ingeniería en Sistemas y desarrollador en formación."
+  />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #1e293b;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-dark: #0ea5e9;
+      --border: #334155;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      --max-width: 1100px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, #020617 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(90%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(51, 65, 85, 0.7);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: flex;
+      align-items: center;
+      padding: 4rem 0;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text h1 span {
+      color: var(--primary);
+    }
+
+    .hero-text p {
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .hero-card {
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .hero-card li {
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.25rem;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: transform 0.2s ease, background 0.2s ease, border 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #0f172a;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      color: var(--text);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .card {
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 280px;
+    }
+
+    .project-card h3 {
+      margin-bottom: 0.75rem;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: auto;
+    }
+
+    .project-links a {
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skill {
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      background: rgba(30, 41, 59, 0.5);
+    }
+
+    /* Contact */
+    .contact-box {
+      text-align: center;
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin: 1rem auto 1.5rem;
+      max-width: 650px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      border-top: 1px solid rgba(51, 65, 85, 0.7);
+      padding: 1.5rem 0;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-content,
+      .about-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#inicio" class="logo">Javier Fernández</a>
+      <nav class="nav-links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p>Hola, soy</p>
+          <h1>Javier <span>Fernández</span></h1>
+          <p>
+            Estudiante de Ingeniería en Sistemas de Información y desarrollador en formación.
+            Me interesa crear soluciones útiles, aprender buenas prácticas y seguir creciendo
+            en desarrollo backend, frontend y automatización.
+          </p>
+
+          <div class="actions">
+            <a href="https://github.com/TU-USUARIO" target="_blank" class="btn btn-primary">GitHub</a>
+            <a href="https://www.linkedin.com/in/TU-USUARIO" target="_blank" class="btn btn-outline">LinkedIn</a>
+            <a href="mailto:tuemail@example.com" class="btn btn-outline">Contactarme</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Enfoque actual</h3>
+          <ul>
+            <li>• Desarrollo backend con Node.js y Java</li>
+            <li>• APIs REST y bases de datos SQL</li>
+            <li>• Automatización con Python</li>
+            <li>• Construcción de proyectos para portfolio</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="sobre-mi">
+      <div class="container">
+        <h2 class="section-title">Sobre mí</h2>
+        <p class="section-subtitle">
+          Estoy construyendo experiencia a través de proyectos personales y académicos,
+          con foco en software, automatización y desarrollo web.
+        </p>
+
+        <div class="about-grid">
+          <div class="card">
+            <h3>Mi perfil</h3>
+            <p>
+              Soy estudiante de Ingeniería en Sistemas y disfruto aprender construyendo.
+              Me interesa entender cómo funcionan las aplicaciones por dentro, desde la lógica
+              de negocio hasta la persistencia de datos y la experiencia del usuario.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Qué busco</h3>
+            <p>
+              Busco oportunidades para seguir creciendo en desarrollo de software,
+              sumar experiencia real y aportar valor en proyectos donde pueda seguir
+              mejorando mis habilidades técnicas y profesionales.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proyectos">
+      <div class="container">
+        <h2 class="section-title">Proyectos</h2>
+        <p class="section-subtitle">
+          Algunos proyectos que muestran lo que vengo aprendiendo y construyendo.
+        </p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div>
+              <h3>Lista de tareas CLI</h3>
+              <p>
+                Aplicación de línea de comandos para crear, actualizar y eliminar tareas,
+                persistiendo la información en un archivo JSON.
+              </p>
+              <div class="tags">
+                <span class="tag">Node.js</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">CLI</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/TU-USUARIO/TU-REPO" target="_blank">Código</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <h3>Backend con APIs REST</h3>
+              <p>
+                Proyecto orientado a practicar endpoints, lógica de negocio,
+                validaciones y persistencia de datos en una arquitectura clara.
+              </p>
+              <div class="tags">
+                <span class="tag">Java</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">SQL</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/TU-USUARIO/TU-REPO" target="_blank">Código</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <h3>Automatización con Python</h3>
+              <p>
+                Scripts para automatizar tareas repetitivas, procesamiento de archivos
+                y organización de flujos de trabajo.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Automatización</span>
+                <span class="tag">Scripts</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/TU-USUARIO/TU-REPO" target="_blank">Código</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="habilidades">
+      <div class="container">
+        <h2 class="section-title">Habilidades</h2>
+        <p class="section-subtitle">
+          Tecnologías con las que trabajo o estoy aprendiendo actualmente.
+        </p>
+
+        <div class="skills-list">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Node.js</span>
+          <span class="skill">Java</span>
+          <span class="skill">Spring Boot</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Python</span>
+          <span class="skill">C</span>
+          <span class="skill">Git</span>
+          <span class="skill">GitHub</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="contact-box">
+          <h2 class="section-title">Contacto</h2>
+          <p>
+            Si querés ponerte en contacto conmigo para una oportunidad,
+            colaboración o simplemente para hablar de proyectos y tecnología,
+            podés encontrarme en estos enlaces.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:tuemail@example.com" class="btn btn-primary">Email</a>
+            <a href="https://www.linkedin.com/in/TU-USUARIO" target="_blank" class="btn btn-outline">LinkedIn</a>
+            <a href="https://github.com/TU-USUARIO" target="_blank" class="btn btn-outline">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Javier Fernández. Hecho con HTML y CSS.</p>
+    </div>
+  </footer>
+</body>
+</html>
