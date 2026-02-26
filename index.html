@@ -44,11 +44,6 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     .container {
       width: min(90%, var(--max-width));
       margin: 0 auto;
@@ -69,7 +64,6 @@
       max-width: 700px;
     }
 
-    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -83,6 +77,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
       padding: 1rem 0;
     }
 
@@ -90,6 +85,14 @@
       font-size: 1.1rem;
       font-weight: bold;
       letter-spacing: 0.5px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-links {
@@ -107,7 +110,11 @@
       color: var(--primary);
     }
 
-    /* Hero */
+    .language-switch {
+      display: flex;
+      gap: 0.5rem;
+    }
+
     .hero {
       min-height: calc(100vh - 72px);
       display: flex;
@@ -139,15 +146,22 @@
       font-size: 1.05rem;
     }
 
-    .hero-card {
-      background: rgba(17, 24, 39, 0.85);
+    .hero-card,
+    .card,
+    .project-card,
+    .contact-box {
+      background: rgba(17, 24, 39, 0.9);
       border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 2rem;
       box-shadow: var(--shadow);
     }
 
-    .hero-card h3 {
+    .hero-card {
+      padding: 2rem;
+    }
+
+    .hero-card h3,
+    .card h3 {
       margin-bottom: 1rem;
       color: var(--primary);
     }
@@ -158,14 +172,21 @@
       gap: 0.8rem;
     }
 
-    .hero-card li {
+    .hero-card li,
+    .card p,
+    .project-card p,
+    .contact-box p {
       color: var(--muted);
     }
 
-    .actions {
+    .actions,
+    .contact-links,
+    .project-links,
+    .tags,
+    .skills-list {
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .btn {
@@ -175,6 +196,8 @@
       font-weight: bold;
       transition: transform 0.2s ease, background 0.2s ease, border 0.2s ease;
       border: 1px solid transparent;
+      cursor: pointer;
+      font-size: 0.95rem;
     }
 
     .btn:hover {
@@ -197,36 +220,24 @@
       background: transparent;
     }
 
-    .btn-outline:hover {
+    .btn-outline:hover,
+    .btn-outline.active {
       border-color: var(--primary);
       color: var(--primary);
     }
 
-    /* About */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
 
-    .card {
-      background: rgba(17, 24, 39, 0.9);
-      border: 1px solid var(--border);
-      border-radius: 18px;
+    .card,
+    .project-card,
+    .contact-box {
       padding: 1.5rem;
-      box-shadow: var(--shadow);
     }
 
-    .card h3 {
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    .card p {
-      color: var(--muted);
-    }
-
-    /* Projects */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -234,11 +245,6 @@
     }
 
     .project-card {
-      background: rgba(17, 24, 39, 0.9);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 1.5rem;
-      box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -247,18 +253,6 @@
 
     .project-card h3 {
       margin-bottom: 0.75rem;
-    }
-
-    .project-card p {
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
     }
 
     .tag {
@@ -270,12 +264,6 @@
       font-size: 0.85rem;
     }
 
-    .project-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: auto;
-    }
-
     .project-links a {
       color: var(--primary);
       font-weight: bold;
@@ -285,42 +273,21 @@
       text-decoration: underline;
     }
 
-    /* Skills */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
     .skill {
       padding: 0.7rem 1rem;
       border: 1px solid var(--border);
       border-radius: 10px;
-      color: var(--text);
       background: rgba(30, 41, 59, 0.5);
     }
 
-    /* Contact */
     .contact-box {
       text-align: center;
-      background: rgba(17, 24, 39, 0.9);
-      border: 1px solid var(--border);
-      border-radius: 18px;
       padding: 2rem;
-      box-shadow: var(--shadow);
     }
 
     .contact-box p {
-      color: var(--muted);
       margin: 1rem auto 1.5rem;
       max-width: 650px;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
     }
 
     footer {
@@ -330,7 +297,6 @@
       color: var(--muted);
     }
 
-    /* Responsive */
     @media (max-width: 900px) {
       .hero-content,
       .about-grid,
@@ -343,10 +309,14 @@
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .nav {
         flex-direction: column;
-        gap: 1rem;
+        align-items: stretch;
+      }
+
+      .nav-right {
+        justify-content: center;
       }
 
       .nav-links {
@@ -356,14 +326,6 @@
       .section {
         padding: 4rem 0;
       }
-
-      .hero-text h1 {
-        font-size: 2.2rem;
-      }
-
-      .section-title {
-        font-size: 1.7rem;
-      }
     }
   </style>
 </head>
@@ -371,12 +333,20 @@
   <header>
     <div class="container nav">
       <a href="#inicio" class="logo">Javier Fernández</a>
-      <nav class="nav-links">
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#sobre-mi" id="nav-about">Sobre mí</a>
+          <a href="#proyectos" id="nav-projects">Proyectos</a>
+          <a href="#habilidades" id="nav-skills">Habilidades</a>
+          <a href="#contacto" id="nav-contact">Contacto</a>
+        </nav>
+
+        <div class="language-switch">
+          <button id="btn-es" onclick="setLanguage('es')" class="btn btn-outline">ES</button>
+          <button id="btn-en" onclick="setLanguage('en')" class="btn btn-outline">EN</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -384,28 +354,28 @@
     <section class="hero" id="inicio">
       <div class="container hero-content">
         <div class="hero-text">
-          <p>Hola, soy</p>
-          <h1>Javier <span>Fernández</span></h1>
-          <p>
+          <p id="hero-greeting">Hola, soy</p>
+          <h1 id="hero-title">Javier <span>Fernández</span></h1>
+          <p id="hero-description">
             Estudiante de Ingeniería en Sistemas de Información y desarrollador en formación.
             Me interesa crear soluciones útiles, aprender buenas prácticas y seguir creciendo
             en desarrollo backend, frontend y automatización.
           </p>
 
           <div class="actions">
-            <a href="https://github.com/TU-USUARIO" target="_blank" class="btn btn-primary">GitHub</a>
-            <a href="https://www.linkedin.com/in/TU-USUARIO" target="_blank" class="btn btn-outline">LinkedIn</a>
-            <a href="mailto:tuemail@example.com" class="btn btn-outline">Contactarme</a>
+            <a href="https://github.com/TU-USUARIO" target="_blank" class="btn btn-primary" id="hero-github">GitHub</a>
+            <a href="https://www.linkedin.com/in/TU-USUARIO" target="_blank" class="btn btn-outline" id="hero-linkedin">LinkedIn</a>
+            <a href="mailto:tuemail@example.com" class="btn btn-outline" id="hero-contact">Contactarme</a>
           </div>
         </div>
 
         <aside class="hero-card">
-          <h3>Enfoque actual</h3>
+          <h3 id="focus-title">Enfoque actual</h3>
           <ul>
-            <li>• Desarrollo backend con Node.js y Java</li>
-            <li>• APIs REST y bases de datos SQL</li>
-            <li>• Automatización con Python</li>
-            <li>• Construcción de proyectos para portfolio</li>
+            <li id="focus-1">• Desarrollo backend con Node.js y Java</li>
+            <li id="focus-2">• APIs REST y bases de datos SQL</li>
+            <li id="focus-3">• Automatización con Python</li>
+            <li id="focus-4">• Construcción de proyectos para portfolio</li>
           </ul>
         </aside>
       </div>
@@ -413,16 +383,16 @@
 
     <section class="section" id="sobre-mi">
       <div class="container">
-        <h2 class="section-title">Sobre mí</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" id="about-title">Sobre mí</h2>
+        <p class="section-subtitle" id="about-subtitle">
           Estoy construyendo experiencia a través de proyectos personales y académicos,
           con foco en software, automatización y desarrollo web.
         </p>
 
         <div class="about-grid">
           <div class="card">
-            <h3>Mi perfil</h3>
-            <p>
+            <h3 id="profile-title">Mi perfil</h3>
+            <p id="profile-text">
               Soy estudiante de Ingeniería en Sistemas y disfruto aprender construyendo.
               Me interesa entender cómo funcionan las aplicaciones por dentro, desde la lógica
               de negocio hasta la persistencia de datos y la experiencia del usuario.
@@ -430,8 +400,8 @@
           </div>
 
           <div class="card">
-            <h3>Qué busco</h3>
-            <p>
+            <h3 id="goals-title">Qué busco</h3>
+            <p id="goals-text">
               Busco oportunidades para seguir creciendo en desarrollo de software,
               sumar experiencia real y aportar valor en proyectos donde pueda seguir
               mejorando mis habilidades técnicas y profesionales.
@@ -443,16 +413,16 @@
 
     <section class="section" id="proyectos">
       <div class="container">
-        <h2 class="section-title">Proyectos</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" id="projects-title">Proyectos</h2>
+        <p class="section-subtitle" id="projects-subtitle">
           Algunos proyectos que muestran lo que vengo aprendiendo y construyendo.
         </p>
 
         <div class="projects-grid">
           <article class="project-card">
             <div>
-              <h3>Lista de tareas CLI</h3>
-              <p>
+              <h3 id="project1-title">Lista de tareas CLI</h3>
+              <p id="project1-text">
                 Aplicación de línea de comandos para crear, actualizar y eliminar tareas,
                 persistiendo la información en un archivo JSON.
               </p>
@@ -463,14 +433,14 @@
               </div>
             </div>
             <div class="project-links">
-              <a href="https://github.com/TU-USUARIO/TU-REPO" target="_blank">Código</a>
+              <a href="https://github.com/TU-USUARIO/" target="_blank" id="project-link-1">Código</a>
             </div>
           </article>
 
           <article class="project-card">
             <div>
-              <h3>Backend con APIs REST</h3>
-              <p>
+              <h3 id="project2-title">Backend con APIs REST</h3>
+              <p id="project2-text">
                 Proyecto orientado a practicar endpoints, lógica de negocio,
                 validaciones y persistencia de datos en una arquitectura clara.
               </p>
@@ -481,14 +451,14 @@
               </div>
             </div>
             <div class="project-links">
-              <a href="https://github.com/TU-USUARIO/TU-REPO" target="_blank">Código</a>
+              <a href="https://github.com/TU-USUARIO/" target="_blank" id="project-link-2">Código</a>
             </div>
           </article>
 
           <article class="project-card">
             <div>
-              <h3>Automatización con Python</h3>
-              <p>
+              <h3 id="project3-title">Automatización con Python</h3>
+              <p id="project3-text">
                 Scripts para automatizar tareas repetitivas, procesamiento de archivos
                 y organización de flujos de trabajo.
               </p>
@@ -499,7 +469,7 @@
               </div>
             </div>
             <div class="project-links">
-              <a href="https://github.com/TU-USUARIO/TU-REPO" target="_blank">Código</a>
+              <a href="https://github.com/JavierFernandez2002/" target="_blank" id="project-link-3">Código</a>
             </div>
           </article>
         </div>
@@ -508,8 +478,8 @@
 
     <section class="section" id="habilidades">
       <div class="container">
-        <h2 class="section-title">Habilidades</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" id="skills-title">Habilidades</h2>
+        <p class="section-subtitle" id="skills-subtitle">
           Tecnologías con las que trabajo o estoy aprendiendo actualmente.
         </p>
 
@@ -532,17 +502,17 @@
     <section class="section" id="contacto">
       <div class="container">
         <div class="contact-box">
-          <h2 class="section-title">Contacto</h2>
-          <p>
+          <h2 class="section-title" id="contact-title">Contacto</h2>
+          <p id="contact-text">
             Si querés ponerte en contacto conmigo para una oportunidad,
             colaboración o simplemente para hablar de proyectos y tecnología,
             podés encontrarme en estos enlaces.
           </p>
 
           <div class="contact-links">
-            <a href="mailto:fernandezjavier2002@gmail.com" class="btn btn-primary">Email</a>
-            <a href="https://www.linkedin.com/in/javier-fernandez-/" target="_blank" class="btn btn-outline">LinkedIn</a>
-            <a href="https://github.com/JavierFernandez2002" target="_blank" class="btn btn-outline">GitHub</a>
+            <a href="mailto:fernandezjavier2002@gmail.com" class="btn btn-primary" id="contact-email">Email</a>
+            <a href="https://www.linkedin.com/in/javier-fernandez-" target="_blank" class="btn btn-outline" id="contact-linkedin">LinkedIn</a>
+            <a href="https://github.com/JavierFernandez2002" target="_blank" class="btn btn-outline" id="contact-github">GitHub</a>
           </div>
         </div>
       </div>
@@ -551,8 +521,130 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 Javier Fernández. Hecho con HTML y CSS.</p>
+      <p id="footer-text">© 2026 Javier Fernández. Hecho con HTML y CSS.</p>
     </div>
   </footer>
+
+  <script>
+    const translations = {
+      es: {
+        "nav-about": "Sobre mí",
+        "nav-projects": "Proyectos",
+        "nav-skills": "Habilidades",
+        "nav-contact": "Contacto",
+
+        "hero-greeting": "Hola, soy",
+        "hero-title": 'Javier <span>Fernández</span>',
+        "hero-description": "Estudiante de Ingeniería en Sistemas de Información y desarrollador en formación. Me interesa crear soluciones útiles, aprender buenas prácticas y seguir creciendo en desarrollo backend, frontend y automatización.",
+        "hero-github": "GitHub",
+        "hero-linkedin": "LinkedIn",
+        "hero-contact": "Contactarme",
+
+        "focus-title": "Enfoque actual",
+        "focus-1": "• Desarrollo backend con Node.js y Java",
+        "focus-2": "• APIs REST y bases de datos SQL",
+        "focus-3": "• Automatización con Python",
+        "focus-4": "• Construcción de proyectos para portfolio",
+
+        "about-title": "Sobre mí",
+        "about-subtitle": "Estoy construyendo experiencia a través de proyectos personales y académicos, con foco en software, automatización y desarrollo web.",
+        "profile-title": "Mi perfil",
+        "profile-text": "Soy estudiante de Ingeniería en Sistemas y disfruto aprender construyendo. Me interesa entender cómo funcionan las aplicaciones por dentro, desde la lógica de negocio hasta la persistencia de datos y la experiencia del usuario.",
+        "goals-title": "Qué busco",
+        "goals-text": "Busco oportunidades para seguir creciendo en desarrollo de software, sumar experiencia real y aportar valor en proyectos donde pueda seguir mejorando mis habilidades técnicas y profesionales.",
+
+        "projects-title": "Proyectos",
+        "projects-subtitle": "Algunos proyectos que muestran lo que vengo aprendiendo y construyendo.",
+        "project1-title": "Lista de tareas CLI",
+        "project1-text": "Aplicación de línea de comandos para crear, actualizar y eliminar tareas, persistiendo la información en un archivo JSON.",
+        "project2-title": "Backend con APIs REST",
+        "project2-text": "Proyecto orientado a practicar endpoints, lógica de negocio, validaciones y persistencia de datos en una arquitectura clara.",
+        "project3-title": "Automatización con Python",
+        "project3-text": "Scripts para automatizar tareas repetitivas, procesamiento de archivos y organización de flujos de trabajo.",
+        "project-link-1": "Código",
+        "project-link-2": "Código",
+        "project-link-3": "Código",
+
+        "skills-title": "Habilidades",
+        "skills-subtitle": "Tecnologías con las que trabajo o estoy aprendiendo actualmente.",
+
+        "contact-title": "Contacto",
+        "contact-text": "Si querés ponerte en contacto conmigo para una oportunidad, colaboración o simplemente para hablar de proyectos y tecnología, podés encontrarme en estos enlaces.",
+        "contact-email": "Email",
+        "contact-linkedin": "LinkedIn",
+        "contact-github": "GitHub",
+
+        "footer-text": "© 2026 Javier Fernández. Hecho con HTML y CSS."
+      },
+
+      en: {
+        "nav-about": "About",
+        "nav-projects": "Projects",
+        "nav-skills": "Skills",
+        "nav-contact": "Contact",
+
+        "hero-greeting": "Hi, I'm",
+        "hero-title": 'Javier <span>Fernández</span>',
+        "hero-description": "Information Systems Engineering student and aspiring developer. I enjoy building useful solutions, learning best practices, and growing in backend, frontend, and automation.",
+        "hero-github": "GitHub",
+        "hero-linkedin": "LinkedIn",
+        "hero-contact": "Contact me",
+
+        "focus-title": "Current focus",
+        "focus-1": "• Backend development with Node.js and Java",
+        "focus-2": "• REST APIs and SQL databases",
+        "focus-3": "• Automation with Python",
+        "focus-4": "• Building portfolio projects",
+
+        "about-title": "About me",
+        "about-subtitle": "I am building experience through personal and academic projects, with a focus on software, automation, and web development.",
+        "profile-title": "My profile",
+        "profile-text": "I am an Information Systems student who enjoys learning by building. I like understanding how applications work internally, from business logic to data persistence and user experience.",
+        "goals-title": "What I'm looking for",
+        "goals-text": "I am looking for opportunities to keep growing in software development, gain real-world experience, and contribute value in projects where I can continue improving my technical and professional skills.",
+
+        "projects-title": "Projects",
+        "projects-subtitle": "Some projects that reflect what I have been learning and building.",
+        "project1-title": "Task Tracker CLI",
+        "project1-text": "Command-line application to create, update, and delete tasks, storing the information in a JSON file.",
+        "project2-title": "REST API Backend",
+        "project2-text": "Project focused on practicing endpoints, business logic, validations, and data persistence with a clear architecture.",
+        "project3-title": "Python Automation",
+        "project3-text": "Scripts to automate repetitive tasks, file processing, and workflow organization.",
+        "project-link-1": "Code",
+        "project-link-2": "Code",
+        "project-link-3": "Code",
+
+        "skills-title": "Skills",
+        "skills-subtitle": "Technologies I work with or am currently learning.",
+
+        "contact-title": "Contact",
+        "contact-text": "If you'd like to get in touch for an opportunity, collaboration, or just to talk about projects and technology, you can find me through these links.",
+        "contact-email": "Email",
+        "contact-linkedin": "LinkedIn",
+        "contact-github": "GitHub",
+
+        "footer-text": "© 2026 Javier Fernández. Built with HTML and CSS."
+      }
+    };
+
+    function setLanguage(lang) {
+      Object.keys(translations[lang]).forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.innerHTML = translations[lang][id];
+        }
+      });
+
+      document.documentElement.lang = lang;
+      localStorage.setItem("language", lang);
+
+      document.getElementById("btn-es").classList.toggle("active", lang === "es");
+      document.getElementById("btn-en").classList.toggle("active", lang === "en");
+    }
+
+    const savedLanguage = localStorage.getItem("language") || "es";
+    setLanguage(savedLanguage);
+  </script>
 </body>
 </html>
